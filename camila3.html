@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camila, Eu Te Amo muito!</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      animation: changeBackground 3s infinite;
+    }
+    .heart {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: heartbeat 1s infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -75px;
+      left: 0;
+    }
+    .heart::after {
+      left: 75px;
+      top: 0;
+    }
+    .message {
+      margin-top: 50px; /* Mais espaço entre o coração e a mensagem */
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      text-shadow: 1px 1px 4px black;
+    }
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1) rotate(-45deg);
+      }
+      50% {
+        transform: scale(1.1) rotate(-45deg);
+      }
+    }
+    @keyframes changeBackground {
+      0% {
+        background: linear-gradient(45deg, #ff758c, #ff7eb3);
+      }
+      25% {
+        background: linear-gradient(45deg, #ff7eb3, #ffd1dc);
+      }
+      50% {
+        background: linear-gradient(45deg, #ffd1dc, #ff758c);
+      }
+      75% {
+        background: linear-gradient(45deg, #ff7eb3, #ff758c);
+      }
+      100% {
+        background: linear-gradient(45deg, #ff758c, #ff7eb3);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <div class="message">Camila, eu te amo muito!</div>
+</body>
+</html>
